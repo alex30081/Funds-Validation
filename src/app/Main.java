@@ -7,6 +7,7 @@ public class Main{
     static double balance;
 
     public static void main(String[] args) {
+        balance = getBalance();
       validateAmount(balance, getAmount());
     }
 
@@ -16,7 +17,7 @@ public class Main{
 
     private static double getAmount() {
         System.out.printf("Balance is USD %.2f.%n" +
-                "Enter purchase amount, USD: ", getBalance());
+                "Enter purchase amount, USD: ", balance);
         Scanner scanner = new Scanner(System.in);
         return scanner.nextDouble();
 
@@ -43,7 +44,7 @@ public class Main{
     // Метод розрахунку наявних коштів на рахунку
     // після зняття певної суми коштів
     private static double getBalance(double balance, double withdrawal) {
-        return getBalance() - getAmount() ;
+        return balance - withdrawal ;
     }
 }
 
